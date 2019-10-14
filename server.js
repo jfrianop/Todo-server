@@ -10,7 +10,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-var tasks = {};
+var tasks = [];
 
 app.get('/', (req, res) => {
     res.sendFile("index.html")
@@ -23,7 +23,7 @@ app.get('/tasks', (req, res) => {
 app.post('/tasks', (req, res) => {
     var task = req.body;
     task.id = tasks.length + 1;
-    tasks.id = task;
+    tasks.push(task);
     res.json({ id: task.id });
 });
 

@@ -112,6 +112,7 @@
 
     //Declares Task objects from the todo loaded from server
     const loadTask = function (toDoList) {
+      console.log(toDoList)
       let taskList = []
       toDoList.forEach((toDo) => {
         taskList.push(new Task(toDo))
